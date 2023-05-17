@@ -24,11 +24,11 @@
 
     <script>
       // Autocompletador para seleccionar la marca
-      const marcas = ["Apple", "Samsung", "Xiaomi", "Huawei", "Motorola", "Sony"];
+      const marcas = ("Apple", "Samsung", "Xiaomi", "Huawei", "Motorola", "Sony");
       const inputMarca = document.getElementById("marca");
       autocomplete(inputMarca, marcas);
 
-      function autocomplete(input, arr) {
+      function autocomplete(input, arr) 
         let currentFocus;
 
         input.addEventListener("input", function(e) {
@@ -86,7 +86,7 @@
           }
         });
 
-        function addActive(x) {
+        function addActive(x) 
           if (!x) {
             return false;
           }
