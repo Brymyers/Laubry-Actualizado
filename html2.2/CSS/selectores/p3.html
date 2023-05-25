@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de búsqueda de elemento en HTML</title>
+    <style>
+        #Pluton {
+            color: rgb(60, 0, 255);
+        }
+    </style>
+</head>
+<body>
+    <p id="Pluton">Este es el texto de ejemplo en el elemento p con el id "Pluton".</p>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var pElement = document.getElementById('Pluton');
+            var color = getComputedStyle(pElement).color;
+            console.log('El color del texto es:', color);
+        });
+    </script>
+</body>
+</html>
