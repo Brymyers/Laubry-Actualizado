@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.chat {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.person {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.person .details {
+  margin-left: 10px;
+}
+
+.person .name {
+  font-weight: bold;
+}
+
+.person .date {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.person .message {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+.other {
+  align-self: flex-start;
+}
+
+.me {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+</style>
+</head>
+<body>
+<div class="chat">
+  <div class="person other">
+    <img class="avatar" src="wandamaximof (1).png" alt="Avatar 1">
+    <div class="details">
+      <div class="name">Persona 1</div>
+      <div class="date">25 de Mayo, 2023</div>
+      <div class="message">¡Hola! ¿Cómo estás?</div>
+    </div>
+  </div>
+  <div class="person me">
+    <img class="avatar" src="vision (1).jpeg" alt="Avatar 2">
+    <div class="details">
+      <div class="name">Persona 2</div>
+      <div class="date">26 de Mayo, 2023</div>
+      <div class="message">¡Hola! Estoy bien, ¿y tú?</div>
+    </div>
+  </div>
+  <div class="person other">
+    <img class="avatar" src="wandamaximof (1).png" alt="Avatar 1">
+    <div class="details">
+      <div class="name">Persona 1</div>
+      <div class="date">26 de Mayo, 2023</div>
+      <div class="message">Me alegro de que estés bien. ¿Qué planes tienes para hoy?</div>
+    </div>
+  </div>
+  <!-- Agrega más mensajes aquí -->
+</div>
+</body>
+</html>

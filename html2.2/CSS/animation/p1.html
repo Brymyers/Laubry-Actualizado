@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #sun {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: yellow;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #moon {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: gray;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: eclipse 4s infinite;
+    }
+
+    @keyframes eclipse {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="sun"></div>
+  <div id="moon"></div>
+</body>

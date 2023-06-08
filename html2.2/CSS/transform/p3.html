@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mezcla de colores al colocar el cursor</title>
+  <style>
+    .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    .red-circle {
+      background-color: red;
+    }
+
+    .blue-circle {
+      background-color: rgba(0, 0, 255, 0.5);
+      transition: left 0.5s ease-in-out;
+    }
+
+    .blue-circle:hover {
+      left: -20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="circle red-circle"></div>
+  <div class="circle blue-circle"></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alerta de Suscripción a la Newsletter</title>
+  <style>
+    #subscription-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #subscription-box {
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+    }
+    #subscription-box h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    #subscription-box input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    #subscription-box button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    #close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #888;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="subscription-overlay">
+    <div id="subscription-box">
+      <span id="close-btn">&times;</span>
+      <h2>Suscríbete a nuestra newsletter</h2>
+      <form id="subscription-form">
+        <input type="email" name="email" placeholder="Introduce tu correo electrónico" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    var overlay = document.getElementById("subscription-overlay");
+    var closeBtn = document.getElementById("close-btn");
+    var subscriptionForm = document.getElementById("subscription-form");
+
+    closeBtn.addEventListener("click", function() {
+      overlay.style.display = "none";
+    });
+
+    subscriptionForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      // Aquí puedes agregar el código para procesar el envío del formulario
+      alert("Gracias por suscribirte a nuestra newsletter.");
+      overlay.style.display = "none";
+    });
+  </script>
+</body>
+</html

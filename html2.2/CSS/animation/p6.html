@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Péndulo Animado</title>
+  <style>
+    /* Estilos para el péndulo */
+    .pendulum-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .pendulum {
+      width: 4px;
+      height: 150px;
+      background-color: #333;
+      position: relative;
+      transform-origin: bottom center; /* Punto de origen de la transformación */
+      animation: swing 2s ease-in-out infinite; /* Animación de oscilación */
+    }
+    
+    /* Animación de oscilación */
+    @keyframes swing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(15deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenido de la página -->
+  
+  <!-- Péndulo -->
+  <div class="pendulum-container">
+    <div class="pendulum"></div>
+  </div>
+</body>
+</html>

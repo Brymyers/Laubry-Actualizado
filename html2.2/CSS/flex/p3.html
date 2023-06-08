@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agenda y Tiempo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    
+    .event {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .event-title {
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .event-time {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .time {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Agenda y Tiempo</h1>
+  
+  <div class="event">
+    <h2 class="event-title">Reunión de equipo</h2>
+    <p class="event-time">Fecha: 27 de mayo, 10:00 AM - 11:30 AM</p>
+  </div>
+  
+  <div class="event">
+    <h2 class="event-title">Almuerzo</h2>
+    <p class="event-time">Fecha: 27 de mayo, 12:30 PM - 1:30 PM</p>
+  </div>
+  
+  <div class="event">
+    <h2 class="event-title">Presentación de proyecto</h2>
+    <p class="event-time">Fecha: 27 de mayo, 2:00 PM - 3:30 PM</p>
+  </div>
+  
+  <div class="time" id="current-time"></div>
+  
+  <script>
+    // Obtener el elemento de tiempo actual
+    var currentTimeElement = document.getElementById("current-time");
+    
+    // Función para obtener y mostrar el tiempo actual
+    function showCurrentTime() {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      
+      // Ajustar el formato de hora
+      hours = formatTimeComponent(hours);
+      minutes = formatTimeComponent(minutes);
+      seconds = formatTimeComponent(seconds);
+      
+      // Mostrar el tiempo actual
+      currentTimeElement.innerHTML = "Tiempo: " + hours + ":" + minutes + ":" + seconds;
+      
+      // Actualizar el tiempo cada segundo
+      setTimeout(showCurrentTime, 1000);
+    }
+    
+    // Función para formatear un componente de tiempo (añadir un cero si es necesario)
+    function formatTimeComponent(component) {
+      return component < 10 ? "0" + component : component;
+    }
+    
+    // Iniciar la función de mostrar tiempo actual
+    showCurrentTime();
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cartel de Cookies</title>
+  <style>
+    /* Estilos para el cartel de cookies */
+    #cookies-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      display: none; /* Inicialmente oculto */
+      animation: fade-in 0.5s ease-in-out forwards; /* Animación de fundido */
+    }
+    
+    /* Animación de fundido */
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenido de la página -->
+  
+  <!-- Cartel de cookies -->
+  <div id="cookies-banner">
+    Este sitio web utiliza cookies. Al continuar navegando, aceptas nuestro uso de cookies.
+    <button onclick="aceptarCookies()">Aceptar</button>
+  </div>
+  
+  <!-- JavaScript para mostrar el cartel de cookies después de unos segundos -->
+  <script>
+    // Mostrar el cartel de cookies después de 5 segundos
+    setTimeout(function() {
+      var banner = document.getElementById('cookies-banner');
+      banner.style.display = 'block';
+    }, 5000);
+    
+    // Función para aceptar las cookies y ocultar el cartel
+    function aceptarCookies() {
+      var banner = document.getElementById('cookies-banner');
+      banner.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

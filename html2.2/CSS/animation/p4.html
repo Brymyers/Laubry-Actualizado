@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Reloj Animado</title>
+  <style>
+    /* Estilos para el reloj */
+    #clock {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      border-radius: 50%;
+      position: relative;
+      margin: 50px auto;
+    }
+    
+    /* Estilos para las agujas */
+    .hand {
+      position: absolute;
+      background-color: #333;
+      transform-origin: bottom center; /* Punto de origen de la transformación */
+      transition: all 0.5s ease-in-out; /* Animación de movimiento */
+    }
+    
+    .hour-hand {
+      width: 6px;
+      height: 70px;
+      top: 65px;
+      left: 97px;
+      transform: rotate(30deg); /* Posición inicial de la aguja de horas */
+    }
+    
+    .minute-hand {
+      width: 4px;
+      height: 90px;
+      top: 40px;
+      left: 98px;
+      transform: rotate(180deg); /* Posición inicial de la aguja de minutos */
+    }
+    
+    .second-hand {
+      width: 2px;
+      height: 100px;
+      top: 30px;
+      left: 99px;
+      transform: rotate(270deg); /* Posición inicial de la aguja de segundos */
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenido de la página -->
+  
+  <!-- Reloj -->
+  <div id="clock">
+    <!-- Agujas del reloj -->
+    <div class="hand hour-hand"></div>
+    <div class="hand minute-hand"></div>
+    <div class="hand second-hand"></div>
+  </div>
+  
+  <!-- JavaScript para animar las agujas del reloj -->
+  <script>
+    function updateClock() {
+      // Obtener la hora actual
+      var now = new Date();
+      
+      // Calcular los ángulos de las agujas
+      var hourAngle = (now.getHours() % 12) * 30 + now.getMinutes() * 0.5; // Cada hora son 30 grados y cada minuto es 0.5 grados adicionales
+      var minuteAngle = now.getMinutes() * 6; // Cada minuto son 6 grados
+      var secondAngle = now.getSeconds() * 6; // Cada segundo son 6 grados
+      
+      // Rotar las agujas en base a los ángulos calculados
+      var hourHand = document.querySelector('.hour-hand');
+      var minuteHand = document.querySelector('.minute-hand');
+      var secondHand = document.querySelector('.second-hand');
+      
+      hourHand.style.transform = 'rotate(' + hourAngle + 'deg)';
+      minuteHand.style.transform = 'rotate(' + minuteAngle + 'deg)';
+      secondHand.style.transform = 'rotate(' + secondAngle + 'deg)';
+      
+      // Actualizar el reloj cada segundo
+      setTimeout(updateClock, 1000);
+    }
+    
+    // Iniciar el reloj al cargar la página
+    updateClock();
+  </script>
+</body>
+</html>
